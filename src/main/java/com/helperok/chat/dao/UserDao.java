@@ -10,6 +10,9 @@ public interface UserDao extends PagingAndSortingRepository<User,Long>{
     @Query("select u from User u")
     List<User> findAll();
 
+    @Query("select u from User u where nickname=?1")
+    User findByNickname(String nickname);
+
     @Query("select u from User u where id in(?1)")
     List<User> findUserMeta(List<Long> userIds);
 }

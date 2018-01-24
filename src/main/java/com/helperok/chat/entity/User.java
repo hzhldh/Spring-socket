@@ -10,7 +10,6 @@ import javax.persistence.Table;
 public class User {
     private Long id;
     private String nickname;
-    private String avatar;
 
     @Id
     @GeneratedValue
@@ -28,13 +27,5 @@ public class User {
 
     public void setNickname(String nickname) {
         this.nickname = nickname;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
     }
 }

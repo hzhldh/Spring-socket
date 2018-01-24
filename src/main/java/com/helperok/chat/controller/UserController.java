@@ -38,4 +38,19 @@ public class UserController {
         return userService.findUsersMeta(Lists.newArrayList(userIds));
     }
 
+    /*
+    用户登录
+     */
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    public User login(@RequestParam(value = "nickname") String nickname){
+        User user=userService.findUserByNickname(nickname);
+        if(user!=null){
+            return user;
+        }else {
+            User newUser=new User();
+            newUser.setNickname(nickname);
+            return userService.addUser(newUser);
+        }
+    }
+
 }

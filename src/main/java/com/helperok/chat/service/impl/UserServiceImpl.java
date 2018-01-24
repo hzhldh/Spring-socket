@@ -16,13 +16,18 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Override
-    public void addUser(User user) {
-        userDao.save(user);
+    public User addUser(User user) {
+        return userDao.save(user);
     }
 
     @Override
     public User findUserById(Long id) {
         return userDao.findOne(id);
+    }
+
+    @Override
+    public User findUserByNickname(String nickname) {
+        return userDao.findByNickname(nickname);
     }
 
     @Override
