@@ -18,7 +18,7 @@ public class UserController {
     获取指定用户信息
      */
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public User getUserById(@PathVariable(value = "id") Long id) {
+    public User getUserById(@PathVariable(value = "id") long id) {
         return userService.findUserById(id);
     }
 

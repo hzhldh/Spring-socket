@@ -3,7 +3,9 @@ package com.helperok.chat.listener;
 import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.listener.ConnectListener;
 import com.helperok.chat.SessionStore;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ClientConnectListener implements ConnectListener {
     @Override
     public void onConnect(SocketIOClient socketIOClient) {

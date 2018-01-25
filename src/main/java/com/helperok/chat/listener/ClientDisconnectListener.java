@@ -3,7 +3,9 @@ package com.helperok.chat.listener;
 import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.listener.DisconnectListener;
 import com.helperok.chat.SessionStore;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ClientDisconnectListener implements DisconnectListener{
     @Override
     public void onDisconnect(SocketIOClient socketIOClient) {

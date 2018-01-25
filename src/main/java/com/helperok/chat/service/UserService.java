@@ -12,7 +12,9 @@ public interface UserService {
 
     User findUserByNickname(String nickname);
 
-    //获取全部用户信息
+    /*
+    获取全部用户信息
+     */
     List<User> findAll();
 
     List<User> findUsersMeta(List<Long> userIds);
