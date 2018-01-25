@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>聊天测试</title>
+<style>
+div{
+    border-radius: 10px;
+    border: 2px solid pink;
+    width:800px;
+}
+</style>
+</head>
+<body>
+
+<input type="text" id="inputContent">
+<div id="sendBtn" style="width:50px;float: left;text-align:center;">发送</div>
+
+<h1>收到消息</h1>
+<div id="result"></div>
+<script src="https://cdn.bootcss.com/socket.io/2.0.4/socket.io.js"></script>
+<script>
+//创建Socket.IO实例，建立连接
+var currentId=1;
+var receiverId=2;
+var socket = io.connect(`http://localhost:9092?userId=${currentId}`);
+
+// 添加一个连接监听器
+socket.on('connect',function() { 
+  console.log('已连接server');
+});
+
+// 添加一个消息监听器
+socket.on('msg',function(data) {
+  document.getElementById("result").innerHTML+=data.senderId+": "+data.content + "<br />";
+});
+
+// 添加一个关闭连接的监听器
+socket.on('disconnect',function() { 
+  console.log('client断开');
+}); 
+
+// 通过Socket发送一条消息到服务器
+function sendMessageToServer(message) {
+  socket.emit("msg",message);  
+}
+
+document.getElementById('sendBtn').onclick = function(){
+  var inputContent=document.getElementById("inputContent").value;
+  sendMessageToServer({content:inputContent,senderId:currentId,receiverId:receiverId});
+  document.getElementById("result").innerHTML+=currentId+": "+inputContent + "<br />";
+  document.getElementById("inputContent").value="";
+}
+</script>
+
+</body>
+</html>
