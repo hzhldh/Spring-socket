@@ -67,16 +67,6 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
             <version>${spring.data.version}</version>
-            <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<groupId>org.springframework</groupId>-->
-                    <!--<artifactId>spring-beans</artifactId>-->
-                <!--</exclusion>-->
-                <!--<exclusion>-->
-                    <!--<artifactId>spring-context</artifactId>-->
-                    <!--<groupId>org.springframework</groupId>-->
-                <!--</exclusion>-->
-            <!--</exclusions>-->
         </dependency>
         <!--hibernate-->
         <dependency>
@@ -130,26 +120,7 @@
             <artifactId>google-collections</artifactId>
             <version>1.0</version>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>org.springframework</groupId>-->
-        <!--<artifactId>spring-web</artifactId>-->
-        <!--<version>${spring.version}</version>-->
-        <!--</dependency>-->
     </dependencies>
-
-
-    <!--<dependencies>-->
-    <!--<dependency>-->
-    <!--<groupId>commons-httpclient</groupId>-->
-    <!--<artifactId>commons-httpclient</artifactId>-->
-    <!--<version>3.1</version>-->
-    <!--</dependency>-->
-    <!--<dependency>-->
-    <!--<groupId>org.apache.commons</groupId>-->
-    <!--<artifactId>commons-lang3</artifactId>-->
-    <!--<version>3.3.2</version>-->
-    <!--</dependency>-->
-    <!--</dependencies>-->
 
     <!--build 配置-->
     <build>

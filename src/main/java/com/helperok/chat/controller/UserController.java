@@ -42,7 +42,7 @@ public class UserController {
     用户登录
      */
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public User login(@RequestParam(value = "nickname") String nickname){
+    public User login(String nickname){
         User user=userService.findUserByNickname(nickname);
         if(user!=null){
             return user;
