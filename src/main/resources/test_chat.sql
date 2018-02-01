@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2018-01-25 15:19:48
+Date: 2018-02-01 17:15:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,16 +24,16 @@ CREATE TABLE `chat_message` (
   `sender_id` bigint(20) DEFAULT NULL,
   `receiver_id` bigint(20) DEFAULT NULL,
   `content` varchar(1024) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `has_read` int(2) DEFAULT '0',
   `uuid` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of chat_message
 -- ----------------------------
-INSERT INTO `chat_message` VALUES ('1', '1', '2', '测试第一条消息', '2018-01-25 10:17:54', '0', '880820');
+INSERT INTO `chat_message` VALUES ('1', '1', '2', '测试第一条消息', '2018-02-01 16:26:35', '1', '880820');
 
 -- ----------------------------
 -- Table structure for `chat_session`
