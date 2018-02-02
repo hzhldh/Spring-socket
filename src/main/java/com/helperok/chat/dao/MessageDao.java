@@ -21,7 +21,7 @@ public interface MessageDao extends PagingAndSortingRepository<Message, Long> {
 
     @Query("update Message m set m.hasRead = 1 where m.senderId = ?1 and m.receiverId = ?2 and m.hasRead = 0")
     @Modifying
-    int setReceiverMsgRead(Long senderId, Long receiverId);
+    void setReceiverMsgRead(Long senderId, Long receiverId);
 
     @Query("select count(m) from Message m where m.senderId=?1 and m.receiverId=?2 and m.hasRead=0")
     int countUnRead(Long senderId, Long receiverId);
