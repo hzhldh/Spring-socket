@@ -42,7 +42,7 @@ public class IMServer {
     public void start() {
         final String MSG_EVENT = "msg";
         Configuration config = new Configuration();
-        config.setHostname("localhost");
+        config.setHostname("192.168.1.176");
         config.setPort(9092);
         server = new SocketIOServer(config);
 

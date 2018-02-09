@@ -7,7 +7,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import java.util.List;
 
 public interface UserDao extends PagingAndSortingRepository<User,Long>{
-    @Query("select u from User u")
+    @Query(value = "select u.* from user u LIMIT 5",nativeQuery = true)
     List<User> findAll();
 
     @Query("select u from User u where nickname=?1")

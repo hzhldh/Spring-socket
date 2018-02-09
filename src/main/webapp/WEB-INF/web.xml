@@ -38,6 +38,14 @@
     <filter-name>hibernate</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  <filter>
+    <filter-name>CORS-filter</filter-name>
+    <filter-class>com.helperok.chat.filter.CorsFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>CORS-filter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
   <!--Listener-->
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

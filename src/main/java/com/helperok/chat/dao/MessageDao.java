@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 public interface MessageDao extends PagingAndSortingRepository<Message, Long> {
-    @Query("select m from Message m where ((m.senderId=?1 and m.receiverId =?2) or (m.senderId=?2 and m.receiverId=?1)) and m.createTime>?3 order by m.createTime desc")
+    @Query("select m from Message m where ((m.senderId=?1 and m.receiverId =?2) or (m.senderId=?2 and m.receiverId=?1)) and m.createTime<?3 order by m.createTime desc")
     List<Message> findHistoryByIds(long userId, long otherId, Date max_ts, Pageable page);
 
     @Query(value = "SELECT m.* FROM chat_message m WHERE (m.sender_id=?1 AND m.receiver_id =?2) OR (m.sender_id=?2 AND m.receiver_id=?1) ORDER BY m.create_time DESC LIMIT 1", nativeQuery = true)

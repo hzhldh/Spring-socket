@@ -56,6 +56,8 @@ public class MessageServiceImpl implements MessageService {
         if(session==null){
             //不存在会话则创建会话
             Session newSession=new Session();
+            newSession.setIsSenderDeleted(false);
+            newSession.setIsReceiverDeleted(false);
             newSession.setSenderId(message.getSenderId());
             newSession.setReceiverId(message.getReceiverId());
             newSession.setCreateTime(new Date());
